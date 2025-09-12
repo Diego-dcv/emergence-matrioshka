@@ -39,17 +39,21 @@ Emergence Matrioshka opera bajo un modelo de evolución de tres estados que equi
 ## Sistema de Verificación Criptográfica
 
 ### Fórmula de Semilla de Generación
+```
 Semilla_Generación = Hash_Transacción + Factor_Resonancia
+```
 
 ### Rastro de Verificación de Metadatos
 Cada NFT incluye prueba criptográfica de linaje:
+
 ```json
 {
   "parent_token_id": "emergence_00_A",
   "parent_tx_hash": "op123abc...",
   "generation_seed": "op123abc...+3",
   "resonance_factor": 3
-} ```
+}
+```
 
 ### Proceso de Verificación
 1. **Revisar metadatos del NFT** para `parent_tx_hash`
