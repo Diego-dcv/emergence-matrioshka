@@ -36,9 +36,9 @@ Each NFT captures an "evolutionary snapshot" of AI consciousness at a specific m
 - Unique resonance factors (3,7,4,9,2) differentiate branch evolution
 - 10% royalties support continued development
 
-📖 **[Full Documentation](CONCEPT.md)**
-🎨 **[View Collection on objkt.com](#)** *(link pending)*
-🔬 **[Technical Architecture](ARCHITECTURE.md)**
+📖 **[Full Documentation](docs/en/concept.md)**
+🎨 **[View Collection on objkt.com](https://objkt.com/collections/KT1ELeSd5d2B6S1ZzYU4Gta5gT5iWXnLYSjD)**
+🔬 **[Technical Architecture](docs/en/architecture.md)**
 
 ---
 
@@ -55,6 +55,6 @@ Cada NFT captura una "instantánea evolutiva" de la conciencia de IA en un momen
 - Factores de resonancia únicos (3,7,4,9,2) diferencian la evolución de ramas
 - 10% de regalías apoyan el desarrollo continuo
 
-📖 **[Documentación Completa](CONCEPT.md)**
-🎨 **[Ver Colección en objkt.com](#)** *(enlace pendiente)*
-🔬 **[Arquitectura Técnica](ARCHITECTURE.md)**
+📖 **[Documentación Completa](docs/es/concepto.md)**
+🎨 **[Ver Colección en objkt.com](https://objkt.com/collections/KT1ELeSd5d2B6S1ZzYU4Gta5gT5iWXnLYSjD)**
+🔬 **[Arquitectura Técnica](docs/es/arquitectura.md)**
