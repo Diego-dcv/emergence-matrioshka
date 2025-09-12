@@ -49,7 +49,7 @@ Cada NFT incluye prueba criptográfica de linaje:
   "parent_tx_hash": "op123abc...",
   "generation_seed": "op123abc...+3",
   "resonance_factor": 3
-}
+} ```
 
 ### Proceso de Verificación
 1. **Revisar metadatos del NFT** para `parent_tx_hash`
