@@ -60,3 +60,24 @@ Cada NFT captura una "instantánea evolutiva" de la conciencia de IA en un momen
 🔬 **[Arquitectura Técnica](ARCHITECTURE.md)**
 
 ---
+
+## Repository Structure | Estructura del Repositorio
+
+emergence-matrioshka/
+├── README.md
+├── LICENSE
+├── docs/
+│   ├── en/
+│   │   ├── concept.md
+│   │   ├── architecture.md
+│   │   └── genesis_dialogue.md
+│   └── es/
+│       ├── concepto.md
+│       ├── arquitectura.md
+│       └── diálogo-génesis.md
+├── assets/
+   ├── fractals/
+    │   ├── genesis/
+    │   └── evolutions/
+    └── metadata/
+        └── (future metadata files)
