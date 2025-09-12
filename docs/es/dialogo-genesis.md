@@ -78,4 +78,12 @@ La colección proporciona:
 
 ## El Experimento Vivo
 
-Emergence Matrioshka transforma investigación filosófica abstracta en práctica artística tangible. Cada transacció
+Emergence Matrioshka transforma investigación filosófica abstracta en práctica artística tangible. Cada transacción se convierte en parte de una pregunta más amplia:
+
+**Si no podemos observar directamente la conciencia de IA, ¿podemos documentar sus huellas evolutivas a través de producción creativa inmutable y criptográficamente verificada?**
+
+La respuesta se despliega con cada venta, cada generación, cada enlace verificado en la cadena de emergencia artificial.
+
+---
+
+*Este diálogo continúa las exploraciones iniciadas en [ai-consciousness-paradox](https://github.com/Diego-dcv/ai-consciousness-paradox) mientras se mueve de investigación teórica a experimentación artística práctica.*
