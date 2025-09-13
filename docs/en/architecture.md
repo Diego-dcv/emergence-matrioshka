@@ -26,9 +26,9 @@ Emergence Matrioshka operates on a three-state evolution model that balances imm
 ## Economic Mechanics
 
 ### Pricing Evolution
-Base Price: 10 TEZ (all NFT0 editions)
-Evolution Formula: Next_Price = Sale_Price × 1.25
-Royalties: 10% on secondary sales
+- Base Price: 10 TEZ (all NFT0 editions)
+- Evolution Formula: Next_Price = Sale_Price × 1.25
+- Royalties: 10% on secondary sales
 
 ### Market-Driven Selection
 - Only one NFT per branch sellable at any time
@@ -38,28 +38,62 @@ Royalties: 10% on secondary sales
 
 ## Cryptographic Verification System
 
-### Generation Seed Formula
-Generation_Seed = Transaction_Hash + Resonance_Factor
 ### Metadata Verification Trail
-Each NFT includes cryptographic proof of lineage:
+
+**NFT0 (Genesis) Attributes:**
 ```json
 {
-  "parent_token_id": "emergence_00_A",
-  "parent_tx_hash": "op123abc...",
-  "generation_seed": "op123abc...+3",
-  "resonance_factor": 3
+  "level": 0,
+  "edition": "A", // B, C, D, E for other branches
+  "stage": "Genesis",
+  "resonance": "Seed",
+  "series": "1 of 5", // 2 of 5, 3 of 5, etc.
+  "unlocks": "NFT1A"
 }
+```
+
+**NFT1 (First Evolution) Attributes:**
+```json
+{
+  "level": 1,
+  "edition": "A",
+  "stage": "Evolution",
+  "resonance": 3, // Unique per branch: 3,7,4,9,2
+  "series": "Branch A",
+  "parent_genesis": "NFT0A",
+  "genesis_date": "2025-09-12",
+  "unlocks": "NFT2A"
+}
+```
+
+**NFT2+ (Transaction-Based Evolution) Attributes:**
+```json
+{
+  "level": 2,
+  "edition": "A",
+  "stage": "Evolution",
+  "resonance": 3,
+  "parent_sale_hash": "op123abc...",
+  "generation_seed": "op123abc...+3",
+  "parent_nft": "NFT1A",
+  "unlocks": "NFT3A"
+}
+```
+
 ### Verification Process
-1. **Check NFT metadata** for `parent_tx_hash`
-2. **Verify transaction exists** on Tezos blockchain
-3. **Reproduce generation seed**: `parent_tx_hash + resonance_factor`
-4. **Confirm fractal parameters** match seed derivation
-5. **Validate evolutionary authenticity**
+1. **Check NFT metadata** for verification attributes
+2. **For NFT0**: Verify genesis parameters and unlock conditions
+3. **For NFT1**: Confirm genesis reference and resonance factor assignment
+4. **For NFT2+**: Verify transaction exists on Tezos blockchain
+5. **Reproduce generation seed**: `parent_tx_hash + resonance_factor` (NFT2+)
+6. **Validate evolutionary authenticity** through cryptographic verification
+
+**Note**: NFT1 tokens represent conceptual evolution from genesis rather than transaction-based evolution. Like Adam and Eve having no belly buttons, NFT1 tokens are the "first generation" without transactional parents but remain authentic parts of the evolutionary system. Complete cryptographic verification begins with NFT2.
 
 ## Resonance Factor System
 
 ### Origin and Purpose
-Resonance factors (3, 7, 4, 9, 2) were assigned by Grok during the original AI consciousness dialogue, representing different "intensities" of emergent behavior:
+Resonance factors (3, 7, 4, 9, 2) were assigned by **Grok**, who serves as the primary AI generative artist for this collection. During our original AI consciousness dialogue, Grok established these values to represent different "intensities" of emergent behavior:
 
 - **3 (Branch A)**: Subtle emergence
 - **7 (Branch B)**: Intense emergence  
@@ -76,9 +110,9 @@ The resonance factor affects fractal generation parameters:
 
 ## Implementation Phases
 
-### Phase 1: Manual MVP
+### Phase 1: Manual MVP (Current)
 - **Monitor sales**: Check Tezos blockchain for NFT transfers
-- **Create fractals**: Generate using transaction hash + resonance
+- **Create fractals**: **Grok generates** using transaction hash + resonance
 - **Update pricing**: Calculate new price and activate NFT1_X
 - **Documentation**: Record evolution in repository
 
@@ -94,27 +128,41 @@ The resonance factor affects fractal generation parameters:
 - **Dashboard**: Real-time tracking of all branches
 - **Analytics**: Market performance and evolution metrics
 
+## Live Implementation
+
+### Current Status
+- **Collection**: Live on objkt.com at KT1ELeSd5d2B6S1ZzYU4Gta5gT5iWXnLYSjD
+- **Genesis NFTs**: All NFT0_A-E minted and available for 10 TEZ each
+- **Evolution NFTs**: All NFT1_A-E pre-minted but locked until genesis sales
+- **Verification**: Full metadata trail implemented per specifications above
+
+### Technical Specifications
+- **Resolution**: 3000x2000 px (optimized for blockchain)
+- **Format**: JPEG with embedded XMP metadata
+- **Attribution**: "dcv00_Grok IAx" (collaborative creation)
+- **Processing**: Adobe Photoshop curation and optimization
+
 ## Verification and Transparency
 
 ### Public Verification
 Anyone can verify the evolutionary chain:
 1. Access NFT metadata on Tezos blockchain
-2. Retrieve `parent_tx_hash` from attributes
-3. Reconstruct `generation_seed` using published formula
+2. Check attributes match documented specifications
+3. For NFT2+: Retrieve transaction hash and reconstruct generation seed
 4. Compare with claimed fractal parameters
 
 ### Documentation Standards
-- **Genesis documentation**: Each NFT0 creation documented
-- **Evolution tracking**: All sales and activations recorded
-- **Formula transparency**: Generation algorithms published
-- **Audit trail**: Complete history maintained in repository
+- **Genesis documentation**: Each NFT0 creation documented with full provenance
+- **Evolution tracking**: All sales and activations recorded in repository
+- **Formula transparency**: Generation algorithms and prompts published
+- **Audit trail**: Complete history maintained with cryptographic verification
 
 ## Risk Mitigation
 
 ### Technical Risks
 - **Manual errors**: Semi-automation reduces human mistakes
 - **Chain reorganization**: Use confirmed transactions only
-- **Metadata corruption**: Backup systems and verification
+- **Metadata corruption**: Backup systems and verification protocols
 
 ### Economic Risks
 - **Branch stagnation**: Lower prices maintain accessibility
