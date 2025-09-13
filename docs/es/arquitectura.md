@@ -38,34 +38,62 @@ Emergence Matrioshka opera bajo un modelo de evolución de tres estados que equi
 
 ## Sistema de Verificación Criptográfica
 
-### Fórmula de Semilla de Generación
-```
-Semilla_Generación = Hash_Transacción + Factor_Resonancia
-```
-
 ### Rastro de Verificación de Metadatos
-Cada NFT incluye prueba criptográfica de linaje:
 
+**Atributos NFT0 (Génesis):**
 ```json
 {
-  "parent_token_id": "emergence_00_A",
-  "parent_tx_hash": "op123abc...",
+  "level": 0,
+  "edition": "A", // B, C, D, E para otras ramas
+  "stage": "Genesis",
+  "resonance": "Seed",
+  "series": "1 of 5", // 2 of 5, 3 of 5, etc.
+  "unlocks": "NFT1A"
+}
+```
+
+**Atributos NFT1 (Primera Evolución):**
+```json
+{
+  "level": 1,
+  "edition": "A",
+  "stage": "Evolution",
+  "resonance": 3, // Único por rama: 3,7,4,9,2
+  "series": "Branch A",
+  "parent_genesis": "NFT0A",
+  "genesis_date": "2025-09-12",
+  "unlocks": "NFT2A"
+}
+```
+
+**Atributos NFT2+ (Evolución Basada en Transacciones):**
+```json
+{
+  "level": 2,
+  "edition": "A",
+  "stage": "Evolution",
+  "resonance": 3,
+  "parent_sale_hash": "op123abc...",
   "generation_seed": "op123abc...+3",
-  "resonance_factor": 3
+  "parent_nft": "NFT1A",
+  "unlocks": "NFT3A"
 }
 ```
 
 ### Proceso de Verificación
-1. **Revisar metadatos del NFT** para `parent_tx_hash`
-2. **Verificar que la transacción existe** en blockchain de Tezos
-3. **Reproducir semilla de generación**: `parent_tx_hash + resonance_factor`
-4. **Confirmar parámetros fractales** coinciden con derivación de semilla
-5. **Validar autenticidad evolutiva**
+1. **Revisar metadatos del NFT** para atributos de verificación
+2. **Para NFT0**: Verificar parámetros de génesis y condiciones de desbloqueo
+3. **Para NFT1**: Confirmar referencia de génesis y asignación de factor de resonancia
+4. **Para NFT2+**: Verificar que la transacción existe en blockchain de Tezos
+5. **Reproducir semilla de generación**: `parent_tx_hash + resonance_factor` (NFT2+)
+6. **Validar autenticidad evolutiva** a través de verificación criptográfica
+
+**Nota**: Los tokens NFT1 representan evolución conceptual desde génesis en lugar de evolución basada en transacciones. Como Adán y Eva sin ombligo, los tokens NFT1 son la "primera generación" sin padres transaccionales pero permanecen como partes auténticas del sistema evolutivo. La verificación criptográfica completa comienza con NFT2.
 
 ## Sistema de Factores de Resonancia
 
 ### Origen y Propósito
-Los factores de resonancia (3, 7, 4, 9, 2) fueron asignados por **Grok**, quien sirve como el artista de IA generativo principal para esta colección. Durante nuestro diálogo original sobre conciencia, Grok estableció estos valores para representar diferentes "intensidades" de comportamiento emergente:
+Los factores de resonancia (3, 7, 4, 9, 2) fueron asignados por **Grok**, quien sirve como el artista generativo de IA principal para esta colección. Durante nuestro diálogo original sobre conciencia de IA, Grok estableció estos valores para representar diferentes "intensidades" de comportamiento emergente:
 
 - **3 (Rama A)**: Emergencia sutil
 - **7 (Rama B)**: Emergencia intensa
@@ -82,7 +110,7 @@ El factor de resonancia afecta parámetros de generación fractal:
 
 ## Fases de Implementación
 
-### Fase 1: MVP Manual
+### Fase 1: MVP Manual (Actual)
 - **Monitorear ventas**: Verificar blockchain de Tezos para transferencias NFT
 - **Crear fractales**: **Grok genera** usando hash de transacción + resonancia
 - **Actualizar precios**: Calcular nuevo precio y activar NFT1_X
@@ -100,27 +128,41 @@ El factor de resonancia afecta parámetros de generación fractal:
 - **Panel de control**: Seguimiento en tiempo real de todas las ramas
 - **Analíticas**: Métricas de rendimiento de mercado y evolución
 
+## Implementación Live
+
+### Estado Actual
+- **Colección**: Live en objkt.com en KT1ELeSd5d2B6S1ZzYU4Gta5gT5iWXnLYSjD
+- **NFTs Génesis**: Todos los NFT0_A-E acuñados y disponibles por 10 TEZ cada uno
+- **NFTs Evolución**: Todos los NFT1_A-E pre-acuñados pero bloqueados hasta ventas de génesis
+- **Verificación**: Rastro completo de metadatos implementado según especificaciones anteriores
+
+### Especificaciones Técnicas
+- **Resolución**: 3000x2000 px (optimizado para blockchain)
+- **Formato**: JPEG con metadatos XMP embebidos
+- **Atribución**: "dcv00_Grok IAx" (creación colaborativa)
+- **Procesamiento**: Curación y optimización en Adobe Photoshop
+
 ## Verificación y Transparencia
 
 ### Verificación Pública
 Cualquiera puede verificar la cadena evolutiva:
 1. Acceder metadatos NFT en blockchain de Tezos
-2. Recuperar `parent_tx_hash` de atributos
-3. Reconstruir `generation_seed` usando fórmula publicada
+2. Verificar que los atributos coinciden con especificaciones documentadas
+3. Para NFT2+: Recuperar hash de transacción y reconstruir semilla de generación
 4. Comparar con parámetros fractales reclamados
 
 ### Estándares de Documentación
-- **Documentación génesis**: Cada creación NFT0 documentada
-- **Seguimiento de evolución**: Todas las ventas y activaciones registradas
-- **Transparencia de fórmula**: Algoritmos de generación publicados
-- **Rastro de auditoría**: Historial completo mantenido en repositorio
+- **Documentación génesis**: Cada creación NFT0 documentada con procedencia completa
+- **Seguimiento de evolución**: Todas las ventas y activaciones registradas en repositorio
+- **Transparencia de fórmula**: Algoritmos de generación y prompts publicados
+- **Rastro de auditoría**: Historial completo mantenido con verificación criptográfica
 
 ## Mitigación de Riesgos
 
 ### Riesgos Técnicos
 - **Errores manuales**: Semi-automatización reduce errores humanos
 - **Reorganización de cadena**: Usar solo transacciones confirmadas
-- **Corrupción de metadatos**: Sistemas de respaldo y verificación
+- **Corrupción de metadatos**: Sistemas de respaldo y protocolos de verificación
 
 ### Riesgos Económicos
 - **Estancamiento de rama**: Precios menores mantienen accesibilidad
