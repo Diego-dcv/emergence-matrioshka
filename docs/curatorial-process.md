@@ -20,11 +20,11 @@ While the Emergence Matrioshka project documents Grok as the primary generative 
 
 #### NFT1 Bridge Series
 
-**Intervention**: Addition of human figure silhouette in fractal landscape
+**Intervention**: Addition of an observing human figure silhouette in fractal landscape
 
 **Rationale**:
 - **Conceptual Enhancement**: Visualizes the AI-human collaboration central to the project
-- **Meta-Narrative**: "The observer observing" - documents the act of documenting AI emergence  
+- **Meta-Narrative**: "The observer is observed by the observing figure" - documents the act of documenting AI emergence  
 - **Scale Provision**: Human figure provides dimensional reference for fractal complexity
 - **Collaborative Authenticity**: Represents the curatorial role explicitly rather than hiding human involvement
 
@@ -74,7 +74,7 @@ Aunque el proyecto Emergence Matrioshka documenta a Grok como artista generativo
 
 #### Serie NFT1 Bridge
 
-**Intervención**: Adición de silueta de figura humana en paisaje fractal
+**Intervención**: Adición de silueta de una figura humana que está observando al observador en paisaje fractal
 
 **Justificación**:
 - **Mejora Conceptual**: Visualiza la colaboración IA-humano central al proyecto
